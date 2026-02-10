@@ -39,6 +39,21 @@ export interface Experience {
   current?: boolean;
 }
 
+export interface Publication {
+  title: string;
+  venue: string;
+  year: string;
+  status?: 'published' | 'preprint';
+  link?: string;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  year: string;
+  link?: string;
+}
+
 export interface Skill {
   name: string;
   category: string;
@@ -90,7 +105,44 @@ export const experiences: Experience[] = [
     company: 'Hanyang University, Department of Artificial Intelligence',
     period: '2022 — 2024',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Conducted research on generative models and concept erasure methods in text-to-image diffusion models. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Conducted research on generative models and concept erasure methods in text-to-image diffusion models.',
+    highlights: [
+      'Thesis: "A Study on Removal of Concept-Specific Features in Diffusion Models Using Adaptive Switching Algorithms"',
+    ],
+  },
+];
+
+// ─── Publications ───────────────────────────────────────
+export const publications: Publication[] = [
+  {
+    title:
+      'Spatially-Adaptive Concept Erasure in Diffusion Models',
+    venue: '2025 International Conference on Digital Contents',
+    year: '2025',
+    status: 'published',
+  },
+  {
+    title:
+      'CEASE: Concept Erasure for Diffusion Models via Training-Free Adaptive Switching Mechanisms',
+    venue: 'Preprint',
+    year: '2025',
+    status: 'preprint',
+    // link: 'https://arxiv.org/abs/...', // TODO: arXiv 링크 추가
+  },
+];
+
+// ─── Certifications ─────────────────────────────────────
+// TODO: 실제 자격증으로 교체
+export const certifications: Certification[] = [
+  {
+    name: 'Certification Name Here',
+    issuer: 'Issuing Organization',
+    year: '2024',
+  },
+  {
+    name: 'Another Certification',
+    issuer: 'Another Organization',
+    year: '2023',
   },
 ];
 
