@@ -86,7 +86,17 @@
 .bodySection {
   padding: var(--space-xl) clamp(1.5rem, 5vw, 4rem);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sectionHeading {
+  font-size: var(--text-subheadline);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .bodyText {

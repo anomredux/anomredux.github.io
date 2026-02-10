@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { awards } from '../data/profile';
+import { DetailSections } from '../components/detail-sections';
 import styles from './detail-page.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,8 +22,7 @@ export function AwardDetail() {
 
       tl.from('[data-detail-back]', { x: -20, opacity: 0, duration: 0.6 })
         .from('[data-detail-title]', { y: 60, opacity: 0, duration: 1 }, '-=0.3')
-        .from('[data-detail-subtitle]', { y: 40, opacity: 0, duration: 0.8 }, '-=0.5')
-        .from('[data-detail-body]', { y: 40, opacity: 0, duration: 0.8 }, '-=0.3');
+        .from('[data-detail-subtitle]', { y: 40, opacity: 0, duration: 0.8 }, '-=0.5');
 
       gsap.utils.toArray<HTMLElement>('[data-detail-section]').forEach((el) => {
         gsap.from(el, {
@@ -72,14 +72,11 @@ export function AwardDetail() {
         </section>
       )}
 
-      <section data-detail-body className={styles.bodySection}>
+      <section data-detail-section className={styles.bodySection}>
         <p className={styles.bodyText}>{award.description}</p>
       </section>
 
-      {/*
-        Add more sections here for Apple-style presentation.
-        Each section with data-detail-section animates on scroll.
-      */}
+      {award.sections && <DetailSections sections={award.sections} />}
     </div>
   );
 }
