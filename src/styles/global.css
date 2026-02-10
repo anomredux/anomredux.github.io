@@ -1,0 +1,119 @@
+/* ===== CSS Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Design Tokens ===== */
+:root {
+  /* Colors — dark theme (Apple-inspired) */
+  --color-bg: #000000;
+  --color-bg-secondary: #0a0a0a;
+  --color-bg-card: #111111;
+  --color-bg-card-hover: #1a1a1a;
+  --color-text-primary: #f5f5f7;
+  --color-text-secondary: #a1a1a6;
+  --color-text-tertiary: #6e6e73;
+  --color-accent: #2997ff;
+  --color-accent-hover: #0077ed;
+  --color-border: #1d1d1f;
+  --color-divider: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-sans: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+    monospace;
+
+  /* Font Sizes — fluid, Apple-style large typography */
+  --text-hero: clamp(3rem, 8vw, 7rem);
+  --text-headline: clamp(2rem, 5vw, 4rem);
+  --text-subheadline: clamp(1.25rem, 3vw, 2rem);
+  --text-body: clamp(1rem, 1.5vw, 1.25rem);
+  --text-caption: clamp(0.75rem, 1vw, 0.875rem);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --section-padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Utility Classes ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+}
+
+.section {
+  padding: var(--section-padding);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section--half {
+  min-height: 50vh;
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
