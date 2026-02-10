@@ -86,8 +86,8 @@ export const experiences: Experience[] = [
   },
   {
     id: 'grad-research',
-    role: 'Graduate Researcher',
-    company: 'Hanyang University',
+    role: 'M.S. in Artificial Intelligence',
+    company: 'Hanyang University, Department of Artificial Intelligence',
     period: '2022 — 2024',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Conducted research on generative models and concept erasure methods in text-to-image diffusion models. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -104,6 +104,7 @@ export const projects: Project[] = [
     description:
       'Research on methodology for erasing specific concepts from text-to-image diffusion models, conducted during graduate studies.',
     tags: ['PyTorch', 'Diffusion Models', 'Research'],
+    link: 'https://github.com/anomredux', // TODO: 실제 repo URL로 교체
     sections: [
       {
         type: 'text',
@@ -134,6 +135,7 @@ export const projects: Project[] = [
     description:
       'Lorem ipsum dolor sit amet. Designed and deployed a scalable ML pipeline handling real-time inference with automated retraining and monitoring.',
     tags: ['Python', 'Kubernetes', 'Docker', 'MLOps'],
+    link: 'https://github.com/anomredux', // TODO: 실제 repo URL로 교체
     sections: [
       {
         type: 'text',
@@ -164,6 +166,7 @@ export const projects: Project[] = [
     description:
       'Lorem ipsum dolor sit amet. A Go-based inference server optimized for low-latency, high-throughput ML model serving in production.',
     tags: ['Go', 'gRPC', 'Docker', 'Performance'],
+    link: 'https://github.com/anomredux', // TODO: 실제 repo URL로 교체
     sections: [
       {
         type: 'text',

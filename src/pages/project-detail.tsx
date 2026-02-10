@@ -69,6 +69,17 @@ export function ProjectDetail() {
             </span>
           ))}
         </div>
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-detail-tags
+            className={styles.repoLink}
+          >
+            View on GitHub &#8599;
+          </a>
+        )}
       </section>
 
       {project.image && (
