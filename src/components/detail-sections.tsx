@@ -1,8 +1,8 @@
-import type { ProjectSection } from '../data/profile';
-import styles from '../pages/detail-page.module.css';
+import type { ProjectSection } from '../data/profile'
+import styles from '../pages/detail-page.module.css'
 
 interface DetailSectionsProps {
-  sections: ProjectSection[];
+  sections: ProjectSection[]
 }
 
 export function DetailSections({ sections }: DetailSectionsProps) {
@@ -11,10 +11,14 @@ export function DetailSections({ sections }: DetailSectionsProps) {
       {sections.map((section, i) => {
         if (section.type === 'image' && section.image) {
           return (
-            <section key={i} data-detail-section className={styles.imageSection}>
+            <section
+              key={i}
+              data-detail-section
+              className={styles.imageSection}
+            >
               <img src={section.image} alt={section.imageAlt ?? ''} />
             </section>
-          );
+          )
         }
 
         if (section.type === 'text') {
@@ -27,23 +31,27 @@ export function DetailSections({ sections }: DetailSectionsProps) {
                 <p className={styles.bodyText}>{section.body}</p>
               )}
             </section>
-          );
+          )
         }
 
         if (section.type === 'feature') {
           return (
-            <section key={i} data-detail-section className={styles.featureSection}>
+            <section
+              key={i}
+              data-detail-section
+              className={styles.featureSection}
+            >
               {section.heading && <h2>{section.heading}</h2>}
               {section.body && <p>{section.body}</p>}
               {section.image && (
                 <img src={section.image} alt={section.imageAlt ?? ''} />
               )}
             </section>
-          );
+          )
         }
 
-        return null;
+        return null
       })}
     </>
-  );
+  )
 }
