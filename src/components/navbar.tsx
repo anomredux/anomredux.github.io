@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { profile } from '../data/profile'
 import { useLocale } from '../hooks/use-locale'
 import { ThemeToggle } from './theme-toggle'
@@ -14,13 +14,7 @@ interface NavbarProps {
 export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const location = useLocation()
   const { t } = useLocale()
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false)
-  }, [location.pathname])
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
