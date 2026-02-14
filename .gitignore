@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Claude Code / AI agent files
+.agents/
+.claude/
+CLAUDE.md
+plan.md
+*.png
+*.jpeg
+.playwright-mcp/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
