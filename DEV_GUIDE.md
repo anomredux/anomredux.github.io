@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- **Node.js 20+** ([download](https://nodejs.org/))
+- **Node.js 22+** ([download](https://nodejs.org/))
 - **npm** (Node.js와 함께 설치됨)
 - Git
 
@@ -27,12 +27,13 @@ npm run dev
 
 ## Available Commands
 
-| 명령어 | 설명 |
-|---|---|
-| `npm run dev` | 개발 서버 실행 (HMR) |
-| `npm run build` | 프로덕션 빌드 (`dist/` 폴더에 출력) |
-| `npm run preview` | 빌드 결과물 로컬 프리뷰 |
-| `npm run lint` | ESLint 실행 |
+| 명령어            | 설명                                |
+| ----------------- | ----------------------------------- |
+| `npm run dev`     | 개발 서버 실행 (HMR)                |
+| `npm run build`   | 프로덕션 빌드 (`dist/` 폴더에 출력) |
+| `npm run preview` | 빌드 결과물 로컬 프리뷰             |
+| `npm run lint`    | ESLint 실행                         |
+| `npm run format`  | Prettier 포매팅                     |
 
 ## Content Editing
 
@@ -47,7 +48,7 @@ export const profile = {
   tagline: 'Shipping ML to production...',
   emails: ['me@mghong.dev', 'mghong@hanyang.ac.kr'],
   github: 'https://github.com/anomredux',
-};
+}
 ```
 
 ### Project 추가
@@ -114,6 +115,7 @@ export const profile = {
 3. GIF도 동일: `image: '/images/demo.gif'`
 
 추천 포맷:
+
 - 사진: **WebP** 또는 **AVIF** (가볍고 품질 좋음)
 - 애니메이션: **GIF** 또는 **WebP animated**
 - 크기: 가로 최대 1800px 정도면 충분
@@ -146,17 +148,20 @@ GitHub에 push하면 GitHub Actions가 자동으로 빌드 + 배포합니다.
 ## Troubleshooting
 
 **`npm run dev` 포트 충돌 시:**
+
 ```bash
 npm run dev -- --port 3000
 ```
 
 **TypeScript 에러 시:**
+
 ```bash
 # 타입 체크만 실행
 npx tsc --noEmit
 ```
 
 **의존성 문제 시:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install

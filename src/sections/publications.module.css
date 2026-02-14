@@ -1,5 +1,5 @@
 .publications {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg);
 }
 
 .container {
@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  list-style: none;
 }
 
 .item {
@@ -70,8 +71,8 @@
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 100px;
-  background: rgba(255, 159, 10, 0.15);
-  color: #ff9f0a;
+  background: var(--color-badge-bg);
+  color: var(--color-badge-text);
 }
 
 .year {

@@ -1,56 +1,40 @@
-import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { experiences } from '../data/profile';
-import styles from './experience.module.css';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import { experiences } from '../data/profile'
+import { useLocale } from '../hooks/use-locale'
+import { bidirectionalReveal } from '../utils/reveal'
+import styles from './experience.module.css'
 
 export function Experience() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null)
+  const { t } = useLocale()
 
   useGSAP(
     () => {
-      gsap.from('[data-exp-label]', {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      gsap.from('[data-exp-item]', {
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 65%',
-        },
-      });
+      bidirectionalReveal('[data-exp-label]', sectionRef.current, { y: 40 })
+      bidirectionalReveal('[data-exp-item]', sectionRef.current, { y: 60, stagger: 0.15 })
     },
     { scope: sectionRef },
-  );
+  )
 
-  if (experiences.length === 0) return null;
+  if (experiences.length === 0) return null
 
   return (
-    <section ref={sectionRef} className={`section ${styles.experience}`}>
+    <section ref={sectionRef} className={`section ${styles.experience}`} aria-labelledby="experience-heading">
       <div className={styles.container}>
-        <p data-exp-label className={styles.label}>
-          Experience
-        </p>
+        <h2 data-exp-label id="experience-heading" className={styles.label}>
+          {t('section.experience')}
+        </h2>
         <div className={styles.timeline}>
           {experiences.map((exp) => (
             <div key={exp.id} data-exp-item className={styles.item}>
               <div className={styles.dot}>
-                {exp.current && <span className={styles.pulse} />}
+                {exp.current && (
+                  <>
+                    <span className={styles.pulse} />
+                    <span className="sr-only">Current position</span>
+                  </>
+                )}
               </div>
               <div className={styles.content}>
                 <span className={styles.period}>{exp.period}</span>
@@ -70,5 +54,5 @@ export function Experience() {
         </div>
       </div>
     </section>
-  );
+  )
 }

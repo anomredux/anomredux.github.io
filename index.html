@@ -1,11 +1,73 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mingi Hong</title>
-    <meta name="description" content="Mingi Hong — Machine Learning Engineer" />
+    <title>Mingi Hong — Machine Learning Engineer</title>
+    <meta name="description" content="Mingi Hong — Machine Learning Engineer. Shipping ML to production. From models to infrastructure." />
+    <meta name="author" content="Mingi Hong" />
+
+    <!-- Theme color for mobile browser chrome -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- RSS / Atom feed discovery -->
+    <link rel="alternate" type="application/rss+xml" title="Mingi Hong — Blog" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Mingi Hong — Blog" href="/atom.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mingi Hong — Machine Learning Engineer" />
+    <meta property="og:description" content="Shipping ML to production. From models to infrastructure." />
+    <meta property="og:url" content="https://anomredux.github.io/" />
+    <meta property="og:site_name" content="Mingi Hong" />
+    <meta property="og:image" content="https://anomredux.github.io/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mingi Hong — Machine Learning Engineer" />
+    <meta name="twitter:description" content="Shipping ML to production. From models to infrastructure." />
+    <meta name="twitter:image" content="https://anomredux.github.io/og-image.svg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://anomredux.github.io/" />
+
+    <!-- JSON-LD Person Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mingi Hong",
+      "alternateName": "홍민기",
+      "url": "https://anomredux.github.io/",
+      "jobTitle": "Machine Learning Engineer",
+      "email": "me@mghong.dev",
+      "sameAs": [
+        "https://github.com/anomredux"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Hanyang University",
+        "department": "Department of Artificial Intelligence"
+      },
+      "knowsAbout": ["Machine Learning", "PyTorch", "Python", "Go", "Docker", "Kubernetes", "MLOps"]
+    }
+    </script>
+
+    <!-- Prevent FOUC: sync theme before first paint -->
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme-preference');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        else if (window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.setAttribute('data-theme', 'light');
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,31 +1,29 @@
-import { ScrollReveal } from '../components/scroll-reveal';
-import styles from './about.module.css';
+import { ScrollReveal } from '../components/scroll-reveal'
+import { useLocale } from '../hooks/use-locale'
+import styles from './about.module.css'
 
 export function About() {
+  const { t } = useLocale()
+
   return (
-    <section className={`section ${styles.about}`}>
+    <section className={`section ${styles.about}`} aria-labelledby="about-heading">
       <ScrollReveal className={styles.content}>
-        <p data-reveal className={styles.label}>
-          About
+        <p data-reveal className={styles.label} aria-hidden="true">
+          {t('section.about')}
         </p>
-        <h2 data-reveal className={styles.headline}>
-          Machine Learning Engineer
-          <br />
-          building systems that scale.
+        <h2 data-reveal id="about-heading" className={styles.headline}>
+          {t('about.headline').split('\n').map((line, i) => (
+            <span key={i}>
+              {i > 0 && <br />}
+              {line}
+            </span>
+          ))}
         </h2>
         <div data-reveal className={styles.body}>
-          <p>
-            I focus on the full lifecycle of ML — designing training pipelines,
-            optimizing models, and deploying them into production environments
-            that handle real-world traffic.
-          </p>
-          <p>
-            Currently working as a Technical Research Personnel (
-            <span lang="ko">전문연구요원</span>), bridging research and
-            engineering to ship reliable ML infrastructure.
-          </p>
+          <p>{t('about.body1')}</p>
+          <p>{t('about.body2')}</p>
         </div>
       </ScrollReveal>
     </section>
-  );
+  )
 }
