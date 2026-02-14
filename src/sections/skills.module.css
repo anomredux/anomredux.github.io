@@ -16,35 +16,53 @@
   margin-bottom: var(--space-lg);
 }
 
-.grid {
+/* Category cards grid */
+.groups {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-sm);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  padding: var(--space-md);
+.group {
+  padding: var(--space-lg);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: 16px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
 }
 
-.card:hover {
+.group:hover {
   background: var(--color-bg-card-hover);
-  transform: translateY(-4px);
 }
 
-.skillName {
-  font-size: var(--text-subheadline);
+.groupTitle {
+  font-size: var(--text-body);
   font-weight: 600;
   color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
 }
 
-.skillCategory {
+/* Skill chips inside each card */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.chip {
   font-size: var(--text-caption);
-  color: var(--color-text-tertiary);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: 6px 14px;
+  border-radius: 980px;
+  border: 1px solid var(--color-border);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.chip:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-tertiary);
 }

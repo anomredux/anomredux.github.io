@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  max-width: 640px;
+  max-width: 800px;
   color: var(--color-text-secondary);
   line-height: 1.8;
 }

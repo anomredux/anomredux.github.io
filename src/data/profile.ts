@@ -1,62 +1,62 @@
 export interface Project {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  tags: string[];
-  image?: string; // supports png, jpg, webp, gif
-  link?: string;
+  id: string
+  title: string
+  subtitle: string
+  description: string
+  tags: string[]
+  image?: string // supports png, jpg, webp, gif
+  link?: string
   // Detail page content — each section becomes a full-width block
-  sections?: ProjectSection[];
+  sections?: ProjectSection[]
 }
 
 export interface ProjectSection {
-  type: 'text' | 'image' | 'feature';
-  heading?: string;
-  body?: string;
-  image?: string; // supports gif
-  imageAlt?: string;
+  type: 'text' | 'image' | 'feature'
+  heading?: string
+  body?: string
+  image?: string // supports gif
+  imageAlt?: string
 }
 
 export interface Award {
-  id: string;
-  title: string;
-  organization: string;
-  year: string;
-  description: string;
-  image?: string;
-  link?: string;
-  sections?: ProjectSection[];
+  id: string
+  title: string
+  organization: string
+  year: string
+  description: string
+  image?: string
+  link?: string
+  sections?: ProjectSection[]
 }
 
 export interface Experience {
-  id: string;
-  role: string;
-  company: string;
-  period: string;
-  description: string;
-  highlights?: string[];
-  current?: boolean;
+  id: string
+  role: string
+  company: string
+  period: string
+  description: string
+  highlights?: string[]
+  current?: boolean
 }
 
 export interface Publication {
-  title: string;
-  venue: string;
-  year: string;
-  status?: 'published' | 'preprint';
-  link?: string;
+  title: string
+  venue: string
+  year: string
+  status?: 'published' | 'preprint'
+  link?: string
 }
 
 export interface Certification {
-  name: string;
-  issuer: string;
-  year: string;
-  link?: string;
+  name: string
+  issuer: string
+  year: string
+  link?: string
 }
 
 export interface Skill {
-  name: string;
-  category: string;
+  name: string
+  category: string
 }
 
 // ─── Profile ────────────────────────────────────────────
@@ -68,16 +68,31 @@ export const profile = {
     'Shipping ML to production. Pipelines, infrastructure, and everything in between.',
   emails: ['me@mghong.dev', 'mghong@hanyang.ac.kr'],
   github: 'https://github.com/anomredux',
-} as const;
+} as const
 
 // ─── Skills ─────────────────────────────────────────────
+export const skillCategories = ['ml', 'data', 'infra'] as const
+export type SkillCategory = (typeof skillCategories)[number]
+
 export const skills: Skill[] = [
-  { name: 'Python', category: 'Language' },
-  { name: 'PyTorch', category: 'ML/DL' },
-  { name: 'Go', category: 'Backend' },
-  { name: 'Docker', category: 'Infrastructure' },
-  { name: 'Kubernetes', category: 'Infrastructure' },
-];
+  // ML & Deep Learning
+  { name: 'PyTorch', category: 'ml' },
+  { name: 'Diffusion Models', category: 'ml' },
+  { name: 'ONNX', category: 'ml' },
+  { name: 'TensorRT', category: 'ml' },
+  { name: 'scikit-learn', category: 'ml' },
+  // Data & Experimentation
+  { name: 'Python', category: 'data' },
+  { name: 'NumPy', category: 'data' },
+  { name: 'Pandas', category: 'data' },
+  { name: 'OpenCV', category: 'data' },
+  { name: 'MLflow', category: 'data' },
+  // Infrastructure & MLOps
+  { name: 'Go', category: 'infra' },
+  { name: 'FastAPI', category: 'infra' },
+  { name: 'Docker', category: 'infra' },
+  { name: 'Kubernetes', category: 'infra' },
+]
 
 // ─── Experience ─────────────────────────────────────────
 // TODO: 실제 경력으로 교체
@@ -110,13 +125,12 @@ export const experiences: Experience[] = [
       'Thesis: "A Study on Removal of Concept-Specific Features in Diffusion Models Using Adaptive Switching Algorithms"',
     ],
   },
-];
+]
 
 // ─── Publications ───────────────────────────────────────
 export const publications: Publication[] = [
   {
-    title:
-      'Spatially-Adaptive Concept Erasure in Diffusion Models',
+    title: 'Spatially-Adaptive Concept Erasure in Diffusion Models',
     venue: '2025 International Conference on Digital Contents',
     year: '2025',
     status: 'published',
@@ -129,7 +143,7 @@ export const publications: Publication[] = [
     status: 'preprint',
     // link: 'https://arxiv.org/abs/...', // TODO: arXiv 링크 추가
   },
-];
+]
 
 // ─── Certifications ─────────────────────────────────────
 // TODO: 실제 자격증으로 교체
@@ -144,7 +158,7 @@ export const certifications: Certification[] = [
     issuer: 'Another Organization',
     year: '2023',
   },
-];
+]
 
 // ─── Projects ───────────────────────────────────────────
 // TODO: 실제 프로젝트 내용으로 교체
@@ -237,7 +251,7 @@ export const projects: Project[] = [
       },
     ],
   },
-];
+]
 
 // ─── Awards ─────────────────────────────────────────────
 // TODO: 실제 수상 내역으로 교체
@@ -282,4 +296,4 @@ export const awards: Award[] = [
       },
     ],
   },
-];
+]
