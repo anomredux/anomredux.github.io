@@ -17,8 +17,6 @@ dist-ssr
 .claude/
 CLAUDE.md
 plan.md
-*.png
-*.jpeg
 .playwright-mcp/
 
 # Editor directories and files
