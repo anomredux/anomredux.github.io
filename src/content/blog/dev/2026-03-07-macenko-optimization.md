@@ -7,7 +7,7 @@ tags:
   - pytorch
   - pathology
   - performance
-draft: true
+draft: false
 featured: false
 ---
 
